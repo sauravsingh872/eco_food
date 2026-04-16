@@ -7,7 +7,7 @@ import 'dotenv/config'
 import cartRoute from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 const app=express();
-const port= process.env.PORT ||4000;
+const port= process.env.PORT ;
 
 // middleware
 app.use(express.json())
