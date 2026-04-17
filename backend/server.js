@@ -28,4 +28,11 @@ app.listen(port,()=>{
     console.log("server is running on the port 4000")
 });
 
+
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'https://eco-food-p18s.vercel.app',
+  credentials: true
+}));
 //mongodb+srv://acceadmy123:12233dfddr@cluster0.nqrzq7f.mongod
