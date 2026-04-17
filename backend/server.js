@@ -13,8 +13,8 @@ const port = process.env.PORT;
 // middleware
 app.use(express.json())
 app.use(cors({
-  origin: 'https://eco-food-p18s.vercel.app',
-  credentials: true
+  origin: '*',
+  credentials: false
 }));
 
 connectDb();
@@ -33,4 +33,4 @@ app.listen(port, () => {
   console.log("server is running on the port 4000")
 });
 
-export default app;  // ← add this line
+export default app;
