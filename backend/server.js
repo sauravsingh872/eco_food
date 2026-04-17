@@ -18,3 +18,17 @@ app.use(cors({
 }));
 
 connectDb();
+
+app.get('/', (req, res) => {
+  res.send("Api working on the port no 4000")
+})
+
+app.use("/api/food", foodRouter)
+app.use("/images", express.static('uploads'));
+app.use("/api/user", userRouter)
+app.use("/api/cart", cartRoute)
+app.use("/api/order", orderRouter)
+
+app.listen(port, () => {
+  console.log("server is running on the port 4000")
+});
