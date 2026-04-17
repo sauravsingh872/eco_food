@@ -6,33 +6,15 @@ import userRouter from './routes/userRoute.js';
 import 'dotenv/config'
 import cartRoute from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
-const app=express();
-const port= process.env.PORT ;
+
+const app = express();
+const port = process.env.PORT;
 
 // middleware
 app.use(express.json())
-app.use(cors())
- connectDb();
-app.get('/',(req ,res)=>{
-    res.send("Api working on the port no 4000")
-
-})
-app.use("/api/food",foodRouter)
-
-app.use("/images", express.static('uploads'));
-app.use ("/api/user",userRouter)
-app.use("/api/cart",cartRoute)
-app.use("/api/order",orderRouter)
-
-app.listen(port,()=>{
-    console.log("server is running on the port 4000")
-});
-
-
-const cors = require('cors');
-
 app.use(cors({
   origin: 'https://eco-food-p18s.vercel.app',
   credentials: true
 }));
-//mongodb+srv://acceadmy123:12233dfddr@cluster0.nqrzq7f.mongod
+
+connectDb();
